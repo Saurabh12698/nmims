@@ -40,4 +40,16 @@ class User extends Authenticatable
         return;
     }
     
+
+    public function secrets() {
+        return $this->hasMany("App\Secret");
+    }
+
+    public function comments() {
+        return $this->hasMany("App\Comment");
+    }
+
+    public function spams() {
+        return $this->hasMany("App\Spam");
+    }
 }

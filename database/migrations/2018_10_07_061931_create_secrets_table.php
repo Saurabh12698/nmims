@@ -18,7 +18,7 @@ class CreateSecretsTable extends Migration
             $table->unsignedInteger("user_id");
             $table->foreign("user_id")->references("id")->on("users");
             $table->mediumText("secret");
-            $table->float("negative_level");
+            $table->float("negative_level" , 3 , 1)->nullable();
             $table->boolean("status")->default(true);
             $table->integer('spam_count')->default(0);
             $table->timestamps();
