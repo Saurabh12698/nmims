@@ -62,8 +62,8 @@ class SecretController extends Controller
     }
 
     public function index() {
-        $secrets = Secret::where('status' , true)->orderBy('negative_level' , 'desc')->get();
-        return response()->json(['secrets' => $secrets] , 200);
+        $secrets = Secret::where('status' , true)->with('comments')->orderBy('negative_level' , 'desc')->get();
+        return response()->json($secrets , 200);
     }
 
     private function getSadnessLevel($text)

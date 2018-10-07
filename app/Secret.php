@@ -15,4 +15,8 @@ class Secret extends Model
     public function spam() {
         return $this->hasMany("App\Spam");
     }
+
+    public function comments() {
+        return $this->hasMany("App\Comment");
+    }
 }
